@@ -1,0 +1,50 @@
+{
+  "name": "payload-auth-replacement",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=\"${NODE_OPTIONS} --no-deprecation\" next dev -p80",
+    "devturbo": "pnpm dev --turbo",
+    "devsafe": "rm -rf .next && pnpm dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "ci": "payload migrate && pnpm build",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:schema": "payload-graphql generate:schema",
+    "standalone-script": "payload run ./src/scripts/standalone-script.ts",
+    "generate:importmap": "payload generate:importmap"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.0.0-beta.123",
+    "@payloadcms/next": "3.0.0-beta.123",
+    "@payloadcms/ui": "3.0.0-beta.123",
+    "bcrypt": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.8.2",
+    "jsonwebtoken": "^9.0.2",
+    "next": "15.0.0",
+    "payload": "3.0.0-beta.123",
+    "react": "19.0.0-rc-603e6108-20241029",
+    "react-dom": "19.0.0-rc-603e6108-20241029",
+    "sharp": "0.32.6",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@payloadcms/graphql": "3.0.0-beta.123",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20.14.9",
+    "@types/react": "npm:types-react@19.0.0-rc.0",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.0.0-canary.104",
+    "typescript": "5.5.4"
+  },
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+}
